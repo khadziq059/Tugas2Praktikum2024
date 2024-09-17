@@ -55,7 +55,9 @@ class FormDataState extends State<FormData> {
   }
 
   _tombolSimpan() {
-    return ElevatedButton(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20.0), // Menambahkan margin vertikal pada button
+      child: ElevatedButton(
         onPressed: () {
           String nama = _namaController.text;
           String nim = _nimController.text;
@@ -64,6 +66,12 @@ class FormDataState extends State<FormData> {
               builder: (context) =>
                   TampilData(nama: nama, nim: nim, tahun: tahun)));
         },
-        child: const Text('Simpan'));
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.black,
+        ),
+        child: const Text('Simpan'),
+      ),
+    );
   }
 }
