@@ -1,23 +1,20 @@
 # Tugas Pertemuan 2
 
-Fork dan clone repository ini, lalu jalankan perintah 
-```
-flutter pub get
-```
-Buatlah tampilan form yang berisi nama, nim, dan tahun lahir pada file `ui/form_data.dart`, lalu buatlah tampilan hasil dari input data tersebut pada file `ui/tampil_data.dart`
+PROSES PASSING DATA DARI FORM MENUJU TAMPILAN
 
-JELASKAN PROSES PASSING DATA DARI FORM MENUJU TAMPILAN DENGAN FILE `README.md`
+- Di dalam widget `FormData`, terdapat tiga '`extField` yang digunakan untuk mengumpulkan data dari pengguna: nama, NIM, dan tahun lahir. 
+- Setiap `TextField` memiliki `TextEditingController` yang berfungsi untuk menangkap input dari pengguna.
+- Ketika tombol "Simpan" ditekan, fungsi `onPressed` pada tombol tersebut akan dipanggil. Pada fungsi ini, nilai dari tiga `TextEditingController` (untuk nama, NIM, dan tahun) akan diambil menggunakan properti `.text`.
+- Setelah mendapatkan data dari form, aplikasi melakukan navigasi ke halaman baru, yaitu `TampilData`. Navigasi ini dilakukan dengan memanggil `Navigator.of(context).push()`, di mana halaman baru `(TampilData)` dibangun dengan data yang dipassing melalui konstruktor `TampilData`.
+- Di dalam file `tampil_data.dart`, data yang dipassing dari halaman `FormData` (nama, NIM, dan tahun) diterima sebagai parameter di konstruktor `TampilData`.
+- Data ini kemudian digunakan untuk menghitung umur pengguna (berdasarkan tahun lahir), dan ditampilkan dalam format teks menggunakan widget Text.
 
-Buat tampilan semenarik mungkin untuk dilihat.
+Nama : Muhammad Khadziq
 
+NIM : H1D022059
 
-Nama : ___
-
-NIM : ___
-
-Shift Baru: ___
+Shift Baru: SHIFT C
 
 ## Screenshot
-Contoh :
 ![Lampiran Form](form.png)
 ![Lampiran Hasil](hasil.png)
